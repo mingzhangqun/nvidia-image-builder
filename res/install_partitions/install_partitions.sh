@@ -39,7 +39,7 @@ case $input in
 esac
 
 echo "Creating partitions..."
-sgdisk -o $1
+sgdisk -Z $1
 sgdisk -n "0:0:80G" -c 0:"APP" -t 0:"0700" -u "0:d469d30f-38ba-4ec3-af99-baad598070b4" $1
 sgdisk -n "0:0:+64M" -c 0:"kernel" -t 0:"0700" -u "0:64154858-d1a1-430b-a10c-3712ad3b1b7d" $1
 sgdisk -n "0:0:+64M" -c 0:"kernel_b" -t 0:"0700" -u "0:45fdf448-2d42-468a-ba2c-335e7bf1204b" $1
